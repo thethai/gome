@@ -1,0 +1,484 @@
+*,
+html {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-size: 100%;
+    font-family: serif, sans-serif;
+    background-color: #ebebeb;
+}
+
+.clearfix {
+    clear: both;
+}
+
+header,
+section,
+aside {
+    display: block;
+}
+
+
+/*
+* based font-size: 16px
+* based viewport width: 1366px
+*/
+
+
+/*Format for top header */
+
+header {
+    background-color: #fdd504;
+    box-shadow: 0 0 15px #ccc;
+}
+
+#bar-menu {
+    position: absolute;
+    right: 5px;
+    top: 15px;
+}
+
+#bar-menu:hover {
+    cursor: pointer;
+}
+
+
+/* For mobile */
+
+#logo {
+    text-decoration: none;
+    color: blue;
+    font-size: 1.25em;
+    /*20px/16px*/
+    display: block;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    text-align: center;
+}
+
+#logo img,
+#logo span {
+    display: inline-block;
+    vertical-align: middle;
+    margin-right: 5px;
+}
+
+#main_nav {
+    display: none;
+    text-align: center;
+    background-color: antiquewhite;
+    width: 200px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 1;
+}
+
+#main_nav a,
+#main_nav span {
+    display: block;
+    text-transform: uppercase;
+    text-decoration: none;
+    color: #000;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    vertical-align: middle;
+}
+
+
+/*For viewport >= 693px */
+
+@media screen and (min-width: 693px) {
+    #bar-menu {
+        display: none;
+    }
+    #main_nav span {
+        /* hide search box*/
+        display: none;
+    }
+    #main_nav {
+        display: table;
+        width: 100%;
+        text-align: center;
+        position: static;
+        background-color: #fdd504;
+    }
+    #main_nav a {
+        display: table-cell;
+        text-transform: uppercase;
+        text-decoration: none;
+        color: #000;
+        padding-top: 5px;
+        padding-bottom: 5px;
+        vertical-align: middle;
+    }
+}
+
+
+/*For viewport >= 982px */
+
+@media screen and (min-width: 982px) {
+    #bar-menu {
+        display: none;
+    }
+    #main_nav {
+        display: table;
+        width: 100%;
+        text-align: center;
+        position: static;
+        background-color: #fdd504;
+    }
+    #main_nav a,
+    #main_nav span {
+        display: table-cell;
+    }
+}
+
+
+/*For viewport >= 1344px */
+
+@media screen and (min-width: 1344px) {
+    #bar-menu {
+        display: none;
+    }
+    #logo {
+        float: left;
+        display: table;
+    }
+    #logo img,
+    #logo span {
+        display: table-cell;
+    }
+    #main_nav {
+        display: table;
+        float: right;
+        width: 87.5%;
+        /*1050px / 1200px */
+        text-align: center;
+        position: static;
+        background-color: #fdd504;
+    }
+    #main_nav a,
+    #main_nav span {
+        display: table-cell;
+    }
+}
+
+#header_wrapper {
+    width: 87.84773060029283%;
+    /*1200px/1366px*/
+    margin-bottom: 10px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#header_wrapper:after {
+    content: ' ';
+    clear: both;
+    display: block;
+}
+
+span#search_box input[type="text"] {
+    width: 80%;
+    height: 30px;
+    padding: 5px;
+    outline: 0;
+    border: 0;
+    float: left;
+}
+
+#button_search {
+    padding: 5px 10px;
+    float: left;
+    height: 30px;
+    outline: 0;
+    border: 0;
+}
+
+#button_search:hover {
+    cursor: pointer;
+}
+
+#main_nav a:hover {
+    background-color: #ebebeb;
+}
+
+#main_nav a i {
+    display: block;
+}
+
+
+/*--------------------------------------*/
+
+
+/*Format for body layout*/
+
+#body_wrapper {
+    width: 87.84773060029283%;
+    /*1200px/1366px*/
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#body_wrapper:after {
+    content: ' ';
+    display: block;
+    clear: both;
+}
+
+#left_col {
+    width: 100%;
+    /*850px /1200px*/
+    display: block;
+}
+
+#right_col {
+    display: none;
+}
+
+
+/*For viewport >= 1344px */
+
+@media screen and (min-width: 1344px) {
+    #left_col {
+        width: 70.83333333333333%;
+        /*850px /1200px*/
+        float: left;
+    }
+    #right_col {
+        width: 28.33333333333333%;
+        /*340px/1200px*/
+        float: right;
+        display: block;
+    }
+}
+
+
+/*---------------------------------------*/
+
+
+/*Format for banner */
+
+#main_banner img {
+    width: 100%;
+    /*For responsive image */
+    height: 100%;
+    /*For responsive image */
+    max-height: 400px;
+}
+
+
+/*---------------------------------------*/
+
+
+/*Format for left column: phone list*/
+
+#main_phone_list {
+    text-align: justify;
+}
+
+
+/*This is to fix the last line when justifying.
+* That's because when justifying, the last line is 
+* NOT justified, so we have to insert an empty last line
+*/
+
+#main_phone_list:after {
+    content: ' ';
+    display: inline-block;
+    width: 100%;
+}
+
+.phone_box {
+    width: 100%;
+    /*410px/850px = 48.23529411764706%*/
+    min-height: 200px;
+    min-width: 300px;
+    display: block;
+    margin-bottom: 5px;
+    margin-top: 5px;
+    background-color: #fff;
+    padding: 30px 20px;
+    text-decoration: none;
+    color: #000;
+    box-shadow: 0 0 25px #ccc;
+    border: 1px solid #fdd504;
+    position: relative;
+    text-align: left;
+}
+
+
+/*For viewport >= 714px*/
+
+@media screen and (min-width: 714px) {
+    .phone_box {
+        width: 48.23529411764706%;
+        410px/850px=48.23529411764706% min-height: 200px;
+        min-width: 300px;
+        display: inline-block;
+        margin-bottom: 5px;
+        margin-top: 5px;
+        background-color: #fff;
+        padding: 30px 20px;
+        text-decoration: none;
+        color: #000;
+        box-shadow: 0 0 25px #ccc;
+        border: 1px solid #fdd504;
+        position: relative;
+        text-align: left;
+    }
+}
+
+.phone_box img {
+    width: 24.39024390243902%;
+    /*100px/410px*/
+    height: 120px;
+    float: left;
+    margin-right: 35px;
+}
+
+.phone_box:hover {
+    outline-color: #fdd504;
+    outline-style: double;
+}
+
+.info {
+    display: inline-block;
+    width: 53.65853658536585%;
+    /*220px/410px*/
+}
+
+.info h3 {
+    font-size: 1.125em;
+    /* 18px/16px */
+    text-transform: uppercase;
+    color: blue;
+    /*Prevent text overflow*/
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+}
+
+.info ul {
+    font-size: 1em;
+    /*16px/16px*/
+    list-style: circle;
+    list-style-position: inside;
+    text-indent: 15px;
+    display: inline-block;
+}
+
+span.price {
+    clear: left;
+    font-size: 1.25em;
+    /*20px/16px*/
+    text-align: center;
+    color: red;
+    padding: 10px 10px;
+    display: block;
+}
+
+span.discount {
+    font-size: 0.75em;
+    /* 12px/16px */
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: red;
+    padding: 3px;
+    color: #fff;
+}
+
+span.gift {
+    font-size: 0.75em;
+    /* 12px/16px */
+    position: absolute;
+    top: 0;
+    right: 0;
+    background-color: #00be67;
+    padding: 3px;
+    margin-right: 0;
+    color: #fff;
+}
+
+span.installment {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    margin: 0;
+    font-size: 0.75em;
+    /* 12px/16px */
+    background-color: aquamarine;
+    padding: 5px;
+    border-radius: 5px;
+}
+
+
+/*----------------------------------------*/
+
+
+/*Format right colums */
+
+#ads img {
+    width: 100%;
+    /*340px*/
+}
+
+#news {
+    margin-top: 0;
+    margin-bottom: 10px;
+}
+
+#news a {
+    border-bottom: 3px solid #fdd504;
+    display: block;
+}
+
+#news a h2 {
+    display: inline-block;
+    padding: 10px;
+    font-size: 1em;
+    /*16px/16px*/
+    background-color: #fdd504;
+    text-transform: uppercase;
+}
+
+#news ul {
+    list-style: none;
+    background-color: #fff;
+    border: 3px solid #fdd504;
+    border-top: 0;
+    width: 100%;
+    /*340px*/
+}
+
+#news ul li {
+    padding: 15px;
+    border-bottom: 1px dotted #ccc;
+}
+
+#news ul li:after {
+    content: ' ';
+    display: block;
+    clear: both;
+}
+
+#news ul li img {
+    width: 50px;
+    height: 50px;
+    float: left;
+    margin-right: 2px;
+}
+
+
+/****************************************/
+
+footer {
+    margin-top: 20px;
+    text-align: center;
+    padding: 20px;
+    background-color: darkgray;
+}
